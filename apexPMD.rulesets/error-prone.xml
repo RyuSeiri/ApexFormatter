@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Error Prone"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>一般的に受け入れられているError Proneを実施するルール。</description>
+    <exclude-pattern>.*/.sfdx/.*</exclude-pattern>
+    <!-- ApexCSRFに関するルール -->
+    <rule ref="category/apex/errorprone.xml/ApexCSRF" />
+    <!-- Trigger変数に直接アクセスに関するルール -->
+    <rule ref="category/apex/errorprone.xml/AvoidDirectAccessTriggerMap" />
+    <!-- IDのハードコーディングに関するルール -->
+    <rule ref="category/apex/errorprone.xml/AvoidHardcodingId" />
+    <!-- 存在しない注釈に関するルール -->
+    <!-- <rule ref="category/apex/errorprone.xml/AvoidNonExistentAnnotations" /> -->
+    <!-- 例外がcatchされたが何も処理をしていない場合に関するルール -->
+    <!-- <rule ref="category/apex/errorprone.xml/EmptyCatchBlock" /> -->
+    <!-- if文内の処理が何もない場合に関するルール -->
+    <rule ref="category/apex/errorprone.xml/EmptyIfStmt" />
+    <!-- 空ブロックステートメントに関するルール -->
+    <rule ref="category/apex/errorprone.xml/EmptyStatementBlock">
+        <properties>
+            <property name="reportEmptyPrivateNoArgConstructor" value="true" />
+            <property name="reportEmptyVirtualMethod" value="true" />
+        </properties>
+    </rule>
+    <!-- 空のtry/finallyステートメントに関するルール -->
+    <rule ref="category/apex/errorprone.xml/EmptyTryOrFinallyBlock" />
+    <!-- 空のwhileステートメントに関すルール -->
+    <rule ref="category/apex/errorprone.xml/EmptyWhileStmt" />
+    <!-- Lightning componentからApexプロパティにアクセスする際のアクセス修飾子に関するルール -->
+    <rule ref="category/apex/errorprone.xml/InaccessibleAuraEnabledGetter" />
+    <!-- 非コンストラクタメソッドでクラス名と同名のメソッドに関するルール -->
+    <rule ref="category/apex/errorprone.xml/MethodWithSameNameAsEnclosingClass" />
+    <!-- equalsメソッドとhashCodeメソッドのオーバライドに関するルール -->
+    <rule ref="category/apex/errorprone.xml/OverrideBothEqualsAndHashcode" />
+    <!-- testMethodに関するルール -->
+    <rule ref="category/apex/errorprone.xml/TestMethodsMustBeInTestClasses" />
+
+</ruleset>

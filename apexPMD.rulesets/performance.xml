@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Performance"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>パフォーマンスに関するルール。</description>
+    <exclude-pattern>.*/.sfdx/.*</exclude-pattern>
+    <!-- System.debugに関するルール -->
+    <!-- error発生時のログ等有効なユースケースについては、@SuppressWarnings注釈または//NOPMDコメントを使用する -->
+    <rule ref="category/apex/performance.xml/AvoidDebugStatements" />
+    <!-- SObjectType.getDescribe使用に関するルール -->
+    <!-- <rule ref="category/apex/performance.xml/EagerlyLoadedDescribeSObjectResult">
+        <properties>
+            <property name="noDefault" value="false" />
+        </properties>
+    </rule> -->
+    <!-- ループ処理内でDML操作に関するルール -->
+    <rule ref="category/apex/performance.xml/OperationWithLimitsInLoop" />
+</ruleset>

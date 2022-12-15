@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "salesforce.salesforcedx-vscode",
+    "redhat.vscode-xml",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "financialforce.lana",
+    "formulahendry.auto-rename-tag",
+    "stylelint.vscode-stylelint",
+    "vignaeshrama.sfdx-package-xml-generator",
+    "docode.vscode-remove-final-newlines",
+    "jebbs.plantuml",
+    "shd101wyy.markdown-preview-enhanced",
+    "hediet.vscode-drawio"
+  ]
+}

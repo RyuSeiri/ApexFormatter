@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="security"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>セキュリティに関するルール。</description>
+    <exclude-pattern>.*/.sfdx/.*</exclude-pattern>
+    <!-- Crypto使用に関するルール -->
+    <rule ref="category/apex/security.xml/ApexBadCrypto" />
+    <!-- DML操作前に権限チェック使用に関するルール with sharingで実行すれば良いため、警告を無効化
+    <rule ref="category/apex/security.xml/ApexCRUDViolation">
+        <properties>
+            <property name="updateAuthMethodPattern" value="" />
+            <property name="updateAuthMethodTypeParamIndex" value="0" />
+            <property name="readAuthMethodPattern" value="" />
+            <property name="readAuthMethodTypeParamIndex" value="0" />
+            <property name="undeleteAuthMethodPattern" value="" />
+            <property name="undeleteAuthMethodTypeParamIndex" value="0" />
+            <property name="deleteAuthMethodPattern" value="" />
+            <property name="deleteAuthMethodTypeParamIndex" value="0" />
+            <property name="mergeAuthMethodPattern" value="" />
+            <property name="mergeAuthMethodTypeParamIndex" value="0" />
+            <property name="createAuthMethodPattern" value="" />
+            <property name="createAuthMethodTypeParamIndex" value="0" />
+        </properties>
+    </rule>
+    -->
+    <!-- Configuration.disableTriggerCRUDSecurityメソッドの呼び出し有無に関するルール -->
+    <rule ref="category/apex/security.xml/ApexDangerousMethods" />
+    <!-- httpでアクセスしているかチェックする -->
+    <rule ref="category/apex/security.xml/ApexInsecureEndpoint" />
+    <!-- リダイレクトの制御に関するルール -->
+    <rule ref="category/apex/security.xml/ApexOpenRedirect" />
+    <!-- xxxx sharingの定義に関するルール -->
+    <rule ref="category/apex/security.xml/ApexSharingViolations" />
+    <!-- SOQLでエスケープ使用に関するルール -->
+    <rule ref="category/apex/security.xml/ApexSOQLInjection" />
+    <!-- httpエンドポイントへの要求で使用されるハードコードされた資格情報を検出に関するルール -->
+    <rule ref="category/apex/security.xml/ApexSuggestUsingNamedCred" />
+    <!-- addErrorのエスケープに関するルール -->
+    <rule ref="category/apex/security.xml/ApexXSSFromEscapeFalse" />
+    <!-- XSS攻撃を回避するために、URLパラメータから取得したすべての値が適切にエスケープ/サニタイズされていることを確認するルール -->
+    <rule ref="category/apex/security.xml/ApexXSSFromURLParam" />
+</ruleset>

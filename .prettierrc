@@ -1,0 +1,51 @@
+{
+  "trailingComma": "none",
+  "apexInsertFinalNewline": false,
+  "overrides": [
+    {
+      "files": "**/lwc/**/*.html",
+      "options": {
+        "parser": "lwc",
+        "printWidth": 120,
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    },
+    {
+      "files": "**/lwc/**/*.css",
+      "options": {
+        "printWidth": 120,
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    },
+    {
+      "files": "*.{cmp,page,component}",
+      "options": {
+        "parser": "html",
+        "printWidth": 120,
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    },
+    {
+      "files": "**/lwc/**/*.js",
+      "options": {
+        "printWidth": 120,
+        "tabWidth": 4,
+        "useTabs": false,
+        "singleQuote": true
+      }
+    },
+    {
+      "files": ["*.cls", "*.trigger"],
+      "options": {
+        "printWidth": 120,
+        "tabWidth": 4,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": false
+      }
+    }
+  ]
+}

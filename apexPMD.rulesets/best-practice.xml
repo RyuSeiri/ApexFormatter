@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Best Practices"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>一般的に受け入れられているベストプラクティスを実施するルール。</description>
+    <exclude-pattern>.*/.sfdx/.*</exclude-pattern>
+
+<!--
+    priority 1: error
+    priority 3: warn
+    priority 5: hint
+-->
+
+    <!-- アサートメソッドはメッセージを設定してください。 -->
+   <!-- <rule ref="category/apex/bestpractices.xml/ApexAssertionsShouldIncludeMessage">
+        <priority>5</priority>
+    </rule> -->
+
+    <!-- テストメソッドには少なくとも1つのアサーションを含める必要があります。 -->
+   <!-- <rule
+        ref="category/apex/bestpractices.xml/ApexUnitTestClassShouldHaveAsserts"
+        message="Apex unit test classes should have at least one System.assert() or assertEquals() or AssertNotEquals() call">
+        <priority>3</priority>
+    </rule> -->
+
+    <!-- testMethodキーワードは非推奨です。@IsTestアノテーションを使用してください。 -->
+   <!-- <rule ref="category/apex/bestpractices.xml/ApexUnitTestMethodShouldHaveIsTestAnnotation" >
+        <priority>1</priority>
+    </rule> -->
+
+    <!-- @IsTest(seeAllData=true)は使用できません。 -->
+   <!-- <rule
+        ref="category/apex/bestpractices.xml/ApexUnitTestShouldNotUseSeeAllDataTrue"
+        message="@isTest(seeAllData=true) should not be used in Apex unit tests because it opens up the existing database data for unexpected modification by tests">
+        <priority>1</priority>
+    </rule> -->
+
+    <!-- RestResource、WebService以外のメソッドはglobalにできません。 -->
+   <!-- <rule
+        ref="category/apex/bestpractices.xml/AvoidGlobalModifier"
+        message="Avoid using global modifier">
+        <priority>1</priority>
+    </rule> -->
+
+    <!-- トリガにロジックは記述せず、トリガハンドラを使用してください。 -->
+    <rule
+        ref="category/apex/bestpractices.xml/AvoidLogicInTrigger"
+        message="Avoid logic in triggers">
+        <priority>3</priority>
+    </rule>
+    <!-- デバッグにログレベルを設定してください。 -->
+    <!-- <rule ref="category/apex/bestpractices.xml/DebugsShouldUseLoggingLevel">
+        <priority>3</priority>
+        <properties>-->
+            <!-- LoggingLevel.DEBUGを検出する場合はtrue -->
+            <!-- <property name="strictMode" value="false" />
+        </properties>
+    </rule>  -->
+
+    <!-- 使用されていない変数は宣言しないでください。 -->
+    <rule ref="category/apex/bestpractices.xml/UnusedLocalVariable">
+        <priority>1</priority>
+    </rule>
+</ruleset>
